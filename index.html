@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Light - 365 Day Devotional 2026</title>
+    <meta name="description" content="365 days of biblical devotionals for spiritual growth and daily reflection">
+    <meta name="theme-color" content="#C9A877">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Daily Light">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%23C9A877' width='192' height='192'/%3E%3Ctext x='96' y='130' font-family='serif' font-size='120' text-anchor='middle' fill='%23FFF8F0'%3E✝%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF8F0;
+            --deep-navy: #1a2332;
+            --warm-gold: #C9A877;
+            --soft-sage: #8B9D83;
+            --rust: #A6654E;
+            --shadow-blue: #2d3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF5E8 100%);
+            color: var(--deep-navy);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .bg-decoration {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .bg-decoration.cross {
+            top: 10%;
+            right: 15%;
+            font-size: 200px;
+            color: var(--warm-gold);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-decoration.dove {
+            bottom: 15%;
+            left: 10%;
+            font-size: 150px;
+            color: var(--soft-sage);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--deep-navy);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .header .subtitle {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: var(--warm-gold);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Date Selector */
+        .date-selector {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(26, 35, 50, 0.1);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .date-selector h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+            margin-bottom: 20px;
+        }
+
+        .date-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .date-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 20px;
+            border: 2px solid var(--cream);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+
+        .date-input:focus {
+            outline: none;
+            border-color: var(--warm-gold);
+            background: white;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--warm-gold) 0%, var(--rust) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 168, 119, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--deep-navy);
+            border: 2px solid var(--cream);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--warm-gold);
+            transform: translateY(-2px);
+        }
+
+        .quick-nav {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Devotional Card */
+        .devotional-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 60px rgba(26, 35, 50, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .devotional-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 150px;
+            color: var(--cream);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .devotional-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .date-display {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--warm-gold);
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .day-number {
+            font-size: 0.9rem;
+            color: var(--soft-sage);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .devotional-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--warm-gold);
+            margin-bottom: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--warm-gold);
+        }
+
+        .scripture {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--deep-navy);
+            font-style: italic;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF8F5 100%);
+            border-left: 4px solid var(--warm-gold);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .scripture-reference {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--rust);
+            font-style: normal;
+            font-weight: 500;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .reflection {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--shadow-blue);
+            text-align: justify;
+        }
+
+        .reflection p {
+            margin-bottom: 20px;
+        }
+
+        .prayer {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--deep-navy);
+            font-style: italic;
+            padding: 30px;
+            background: white;
+            border: 2px solid var(--cream);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .prayer::before {
+            content: '🙏';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: white;
+            padding: 0 15px;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: space-between;
+        }
+
+        .nav-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--warm-gold);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .devotional-card {
+                padding: 30px 25px;
+            }
+
+            .devotional-title {
+                font-size: 2rem;
+            }
+
+            .scripture {
+                font-size: 1.1rem;
+            }
+
+            .date-controls {
+                flex-direction: column;
+            }
+
+            .date-input {
+                width: 100%;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+        }
+
+        /* Install Prompt */
+        .install-prompt {
+            background: linear-gradient(135deg, var(--warm-gold) 0%, var(--rust) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: none;
+            align-items: center;
+            gap: 20px;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .install-prompt.show {
+            display: flex;
+        }
+
+        .install-prompt-content {
+            flex: 1;
+        }
+
+        .install-prompt h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .install-prompt p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .install-btn {
+            background: white;
+            color: var(--rust);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .install-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .close-prompt {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            opacity: 0.8;
+        }
+
+        .close-prompt:hover {
+            opacity: 1;
+        }
+
+        .creator-credit {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--cream);
+            font-size: 0.95rem;
+            color: var(--soft-sage);
+            font-weight: 400;
+        }
+
+        .creator-credit a {
+            color: var(--warm-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .creator-credit a:hover {
+            color: var(--rust);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration cross">✝</div>
+    <div class="bg-decoration dove">🕊</div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Daily Light</h1>
+        <div class="subtitle">365 Days of Biblical Devotion</div>
+    </div>
+
+    <div class="container">
+        <!-- Install Prompt -->
+        <div id="installPrompt" class="install-prompt">
+            <div class="install-prompt-content">
+                <h3>Install Daily Light</h3>
+                <p>Add this devotional to your home screen for quick daily access</p>
+            </div>
+            <button id="installBtn" class="install-btn">Install App</button>
+            <button id="closePrompt" class="close-prompt">×</button>
+        </div>
+
+        <!-- Date Selector -->
+        <div class="date-selector">
+            <h2>Choose Your Daily Reading</h2>
+            <div class="date-controls">
+                <input type="date" id="dateInput" class="date-input" min="2026-01-01" max="2026-12-31">
+                <button onclick="loadDevotional()" class="btn btn-primary">Load Devotional</button>
+            </div>
+            <div class="quick-nav">
+                <button onclick="goToToday()" class="btn btn-secondary">Today</button>
+                <button onclick="previousDay()" class="btn btn-secondary">← Previous</button>
+                <button onclick="nextDay()" class="btn btn-secondary">Next →</button>
+                <button onclick="randomDay()" class="btn btn-secondary">Random</button>
+            </div>
+        </div>
+
+        <!-- Devotional Content -->
+        <div id="devotionalContent"></div>
+    </div>
+
+    <script>
+        // Devotional data for all 365 days of 2026
+        const devotionals = {
+            "2026-01-01": {
+                title: "A New Beginning",
+                scripture: "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+                reference: "2 Corinthians 5:17",
+                reflection: "As we step into a new year, we are reminded that every day with God is an opportunity for a fresh start. The old patterns, the old mistakes, the old burdens—they need not define us. In Christ, we are continually being made new. This transformation isn't just a one-time event but a daily renewal of our hearts and minds. Today, embrace the newness that God offers. Let go of what weighs you down and step boldly into the future He has prepared for you. His mercies are new every morning, and His grace is sufficient for all that lies ahead.",
+                prayer: "Heavenly Father, thank You for the gift of new beginnings. As I start this year, help me to release the past and embrace the future You have for me. Renew my spirit, strengthen my faith, and guide my steps. May I walk in the newness of life that You freely offer. In Jesus' name, Amen."
+            },
+            "2026-01-02": {
+                title: "Walk in the Light",
+                scripture: "But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus, his Son, purifies us from all sin.",
+                reference: "1 John 1:7",
+                reflection: "Light dispels darkness and brings clarity to our path. When we choose to walk in God's light, we are choosing truth, righteousness, and communion with Him and with fellow believers. This walk isn't always easy—sometimes the light reveals uncomfortable truths about ourselves. Yet it's in this honest exposure that we find true purification and freedom. Walking in the light means living transparently before God, acknowledging our need for His grace, and extending that same grace to others. As you journey through today, ask yourself: Am I walking in the light, or am I hiding in shadows? Choose transparency, choose truth, and experience the fellowship that comes from living in God's presence.",
+                prayer: "Lord Jesus, You are the Light of the World. Help me to walk in Your light today, avoiding the shadows of deception and sin. Show me any areas where I'm hiding from Your truth, and give me courage to step into the light. Thank You for the cleansing power of Your blood and the fellowship I find in You. Amen."
+            },
+            "2026-01-03": {
+                title: "The Power of Faith",
+                scripture: "Now faith is confidence in what we hope for and assurance about what we do not see.",
+                reference: "Hebrews 11:1",
+                reflection: "Faith is not blind optimism or wishful thinking. It's a confident assurance rooted in the character and promises of God. When we cannot see the way forward, faith becomes our compass. When circumstances seem impossible, faith reminds us that nothing is impossible with God. Throughout history, men and women of faith have accomplished extraordinary things, not because of their own strength but because they trusted in an extraordinary God. Today, whatever challenges you face, remember that faith bridges the gap between your current reality and God's promised future. It's the substance of things hoped for, the evidence of things not yet visible. Trust Him, even when you cannot trace Him.",
+                prayer: "Father, increase my faith. When I face uncertainty, help me to trust in Your promises rather than relying on my limited understanding. Give me the faith to believe in what I cannot yet see and to step forward in confidence, knowing You are faithful. Strengthen my resolve to trust You completely. Amen."
+            },
+            "2026-01-04": {
+                title: "Love One Another",
+                scripture: "A new command I give you: Love one another. As I have loved you, so you must love one another.",
+                reference: "John 13:34",
+                reflection: "Jesus didn't suggest that we love one another—He commanded it. But this isn't a burdensome obligation; it's an invitation to participate in the very nature of God, for God is love. The standard He sets is transformative: love as He has loved us. This means loving sacrificially, forgiving freely, serving humbly, and extending grace generously. It means loving not only those who are easy to love but also those who challenge us, frustrate us, or even oppose us. Such love is supernatural—it flows not from our own capacity but from God's Spirit within us. Today, look for opportunities to demonstrate Christ's love to others. In doing so, you become a living testimony of the Gospel.",
+                prayer: "Lord Jesus, teach me to love as You love. Fill my heart with Your compassion and patience. Help me to see others through Your eyes and to respond to them with Your grace. Where I am tempted to judge or withhold love, remind me of how freely You have loved me. Make me an instrument of Your love today. Amen."
+            },
+            "2026-01-05": {
+                title: "Trusting God's Timing",
+                scripture: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+                reference: "Jeremiah 29:11",
+                reflection: "Waiting is one of life's greatest challenges, especially when we're waiting on God. We want answers now, solutions today, breakthroughs immediately. But God's timing is perfect, even when it doesn't align with our expectations. He sees the entire tapestry of our lives, while we see only a single thread. His delays are not denials, and His timing is always purposeful. When you're in a season of waiting, remember that God is working behind the scenes, orchestrating details you cannot see, preparing you for blessings you haven't imagined. Trust that He knows what you need and when you need it. His plans for you are good, filled with hope and a beautiful future.",
+                prayer: "Heavenly Father, help me to trust Your timing, even when it differs from mine. When I grow impatient, remind me that You are always at work, even in the waiting. Give me peace in this season and confidence in Your perfect plans. I surrender my timeline to You and choose to trust in Your goodness. Amen."
+            },
+            "2026-01-06": {
+                title: "The Joy of the Lord",
+                scripture: "Do not grieve, for the joy of the Lord is your strength.",
+                reference: "Nehemiah 8:10",
+                reflection: "Joy is more than happiness. Happiness depends on circumstances, but joy is rooted in the unchanging character of God. Even in difficult seasons, we can experience deep joy because it flows from knowing we are loved, redeemed, and held by an eternal God. This joy becomes our strength when life feels overwhelming. It's not a superficial cheerfulness but a profound confidence that God is good, He is present, and He is faithful. Today, if you're facing challenges, tap into this supernatural joy. Let it fortify your spirit and renew your perspective. Remember what God has done, celebrate who He is, and allow His joy to fill you with strength for whatever lies ahead.",
+                prayer: "Lord, fill me with Your joy today. When circumstances try to steal my peace, anchor me in the truth of who You are. Let Your joy be my strength, sustaining me through challenges and lifting my spirit. Help me to find delight in Your presence and to share that joy with others. Thank You for being my constant source of strength. Amen."
+            },
+            "2026-01-07": {
+                title: "Be Still and Know",
+                scripture: "Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth.",
+                reference: "Psalm 46:10",
+                reflection: "In our fast-paced, noise-filled world, stillness feels countercultural. We're constantly connected, endlessly busy, perpetually distracted. Yet God invites us to pause, to be still, and to simply know Him. In stillness, we remember His sovereignty. In quiet, we hear His voice. In rest, we experience His presence. Being still doesn't mean being passive—it means ceasing from our striving and trusting that God is God. It means recognizing that He doesn't need our frantic efforts to accomplish His purposes. Today, create moments of stillness. Turn off the noise, silence the inner chatter, and simply be present with God. In that sacred space, you'll discover a peace that transcends understanding.",
+                prayer: "Father, in the busyness of life, teach me to be still. Quiet my anxious thoughts and draw me into Your presence. Help me to remember that You are God and that I can trust You completely. In stillness, may I hear Your voice and find the peace that only You can give. Amen."
+            },
+            "2026-01-08": {
+                title: "Renewed Strength",
+                scripture: "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+                reference: "Isaiah 40:31",
+                reflection: "Exhaustion comes in many forms—physical, emotional, spiritual. When we're depleted, we need more than rest; we need renewal. God promises that those who place their hope in Him will find their strength restored. This isn't a one-time transaction but an ongoing relationship. As we wait on Him, worship Him, and trust Him, He infuses us with supernatural strength. Like eagles catching thermal winds, we rise above our circumstances not by our own power but by His. If you're weary today, don't rely solely on your own resources. Turn to the Source of all strength. Wait on Him, hope in Him, and watch as He renews you from the inside out.",
+                prayer: "Lord, I come to You weary and depleted. Renew my strength according to Your promise. Help me to wait patiently on You and to place my hope fully in Your power. Lift me above my circumstances and give me the endurance I need. Thank You for being my unfailing source of strength. Amen."
+            },
+            "2026-01-09": {
+                title: "Speaking Life",
+                scripture: "The tongue has the power of life and death, and those who love it will eat its fruit.",
+                reference: "Proverbs 18:21",
+                reflection: "Words are powerful. They can build up or tear down, encourage or discourage, heal or harm. Every day, we make choices about how we'll use our words. Will we speak life, hope, and truth, or will we speak criticism, negativity, and despair? The words we speak not only affect others but also shape our own reality. When we consistently speak faith, we strengthen our own belief. When we speak gratitude, we cultivate contentment. Today, be intentional with your words. Speak blessing over your circumstances, encouragement to those around you, and truth to yourself. Your words have the power to transform atmospheres, relationships, and even destinies.",
+                prayer: "Father, set a guard over my mouth. Help me to speak words that bring life, hope, and healing. Forgive me for times I've used my words carelessly or harmfully. Fill my heart with good things so that good words flow from my lips. May my speech honor You and bless others. Amen."
+            },
+            "2026-01-10": {
+                title: "Walking by Faith",
+                scripture: "For we live by faith, not by sight.",
+                reference: "2 Corinthians 5:7",
+                reflection: "Our natural inclination is to trust what we can see, measure, and understand. But faith calls us to a different way of living—one that trusts God's invisible promises more than visible circumstances. Walking by faith means making decisions based on God's Word rather than worldly wisdom, choosing obedience even when it doesn't make sense, and persevering when we cannot see the outcome. It's not reckless abandon but confident trust in a faithful God. Today, you may face situations where faith and sight conflict. In those moments, remember that God's perspective is higher and truer than what your eyes perceive. Choose to walk by faith, trusting that He sees what you cannot and knows what you don't.",
+                prayer: "Lord, strengthen my faith to trust You beyond what I can see. When circumstances contradict Your promises, help me to stand firm on Your Word. Give me courage to walk forward in faith, even when the path ahead is unclear. I trust that You are leading me and that Your ways are perfect. Amen."
+            }
+        };
+
+        // Generate devotionals for all 365 days
+        function generateFullYearDevotionals() {
+            const themes = [
+                { title: "God's Faithfulness", scriptures: ["Great is thy faithfulness, O God my Father", "His compassions never fail, they are new every morning"], references: ["Lamentations 3:22-23", "Psalm 36:5"] },
+                { title: "Finding Peace", scriptures: ["Peace I leave with you; my peace I give you", "And the peace of God, which transcends all understanding, will guard your hearts"], references: ["John 14:27", "Philippians 4:7"] },
+                { title: "Strength in Weakness", scriptures: ["My grace is sufficient for you, for my power is made perfect in weakness", "I can do all things through Christ who strengthens me"], references: ["2 Corinthians 12:9", "Philippians 4:13"] },
+                { title: "Overcoming Fear", scriptures: ["For God has not given us a spirit of fear, but of power and of love and of a sound mind", "Fear not, for I am with you; be not dismayed, for I am your God"], references: ["2 Timothy 1:7", "Isaiah 41:10"] },
+                { title: "The Grace of Forgiveness", scriptures: ["Bear with each other and forgive one another if any of you has a grievance against someone", "Be kind and compassionate to one another, forgiving each other"], references: ["Colossians 3:13", "Ephesians 4:32"] },
+                { title: "Seeking God's Will", scriptures: ["Trust in the Lord with all your heart and lean not on your own understanding", "Commit to the Lord whatever you do, and he will establish your plans"], references: ["Proverbs 3:5-6", "Proverbs 16:3"] },
+                { title: "Hope in Trials", scriptures: ["We also glory in our sufferings, because we know that suffering produces perseverance", "Consider it pure joy, my brothers and sisters, whenever you face trials"], references: ["Romans 5:3", "James 1:2"] },
+                { title: "The Gift of Prayer", scriptures: ["Do not be anxious about anything, but in every situation, by prayer and petition, present your requests to God", "The prayer of a righteous person is powerful and effective"], references: ["Philippians 4:6", "James 5:16"] },
+                { title: "Living with Purpose", scriptures: ["And we know that in all things God works for the good of those who love him", "For we are God's handiwork, created in Christ Jesus to do good works"], references: ["Romans 8:28", "Ephesians 2:10"] },
+                { title: "Abiding in Christ", scriptures: ["Remain in me, as I also remain in you. No branch can bear fruit by itself", "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit"], references: ["John 15:4", "John 15:5"] }
+            ];
+
+            const reflectionTemplates = [
+                "Life often presents us with challenges that test our faith and resolve. Yet in these moments, we discover the depth of God's presence and the strength He provides. Today's scripture reminds us that we are never alone in our journey. God walks beside us, guiding our steps and providing wisdom for every decision. When we feel overwhelmed, we can turn to Him and find the peace that surpasses all understanding. Let this truth anchor your soul today—you are deeply loved, carefully guided, and eternally secure in God's hands.",
+                "In our relationship with God, we discover truths that transform how we see ourselves and the world around us. The scripture today invites us into a deeper understanding of God's character and His desire for our lives. He doesn't call us to perfection but to faithfulness, not to independence but to dependence on Him. As you meditate on these words, consider how they apply to your current circumstances. What is God speaking to your heart? How is He inviting you to grow? Allow His Spirit to illuminate the path forward and give you courage to walk in obedience.",
+                "God's Word is living and active, speaking into every season of our lives. Today's passage offers wisdom for the journey you're on right now. Whether you're experiencing joy or facing difficulty, these words provide direction and hope. God's promises are not abstract concepts but practical truths we can apply daily. Take time to internalize this scripture, letting it shape your thoughts and guide your actions. As you do, you'll find that His Word becomes a lamp to your feet and a light to your path, illuminating each step you take.",
+                "There is profound beauty in how God's truth applies to our everyday lives. Today's scripture speaks to the heart of what it means to follow Christ in a complex world. It challenges us to examine our priorities, refine our values, and align our lives with God's purposes. This isn't always comfortable—growth rarely is—but it's always worthwhile. God is faithful to complete the work He has begun in you. Trust His process, embrace His correction, and celebrate His goodness. He is making you into the person He created you to be.",
+                "The journey of faith is filled with moments of revelation where God's truth breaks through our confusion and brings clarity. Today's passage is one such moment, offering insight that can transform your perspective. God sees what you cannot see, knows what you don't know, and loves you more deeply than you can fathom. His ways are higher than our ways, and His thoughts higher than our thoughts. When you're tempted to rely on your own understanding, remember these words. Let them remind you that God is sovereign, He is good, and He is actively working in your life."
+            ];
+
+            const prayerTemplates = [
+                "Father God, I come before You with gratitude for Your Word and Your presence in my life. Thank You for speaking to me through scripture and for providing exactly what I need for today. Help me to apply these truths to my daily walk with You. Give me wisdom to discern Your will and courage to follow wherever You lead. I surrender my plans, my worries, and my future to You, trusting that Your ways are perfect. In Jesus' mighty name, Amen.",
+                "Lord Jesus, I praise You for who You are and for all You've done in my life. As I reflect on today's scripture, I ask that You would write these truths on my heart. Transform my mind, renew my spirit, and align my will with Yours. Help me to live out these principles not just today but every day. When I stumble, lift me up. When I doubt, strengthen my faith. When I forget, remind me of Your faithfulness. Thank You for Your endless grace. Amen.",
+                "Heavenly Father, Your Word is a treasure that sustains me through every season. I thank You for this moment to pause, reflect, and connect with You. Speak to my heart today. Show me where I need to grow, where I need to let go, and where I need to trust You more fully. Fill me with Your Spirit so that I may walk in Your ways and reflect Your love to everyone I encounter. Guide my steps and guard my heart. In Your precious name, Amen.",
+                "Dear Lord, I am humbled by Your love and amazed by Your grace. Today's devotional has touched my heart in a special way, and I ask that You would seal these truths deep within my soul. Help me to remember Your promises when I face challenges and to cling to Your Word when I feel weak. You are my rock, my refuge, and my strength. I place my complete trust in You, knowing that You are faithful to complete what You have started in me. Thank You for Your unfailing love. Amen.",
+                "Gracious God, I come before You with an open heart, ready to receive what You have for me today. Thank You for meeting me in this moment and for speaking through Your Word. I ask for the grace to obey what I've learned and the faith to believe Your promises. Help me to be a light in this world, reflecting Your love and truth to those around me. Guard my heart against doubt and fear, and fill me instead with peace and confidence in You. I pray this in Jesus' name, Amen."
+            ];
+
+            let currentDate = new Date('2026-01-11');
+            const endDate = new Date('2026-12-31');
+            
+            while (currentDate <= endDate) {
+                const dateStr = currentDate.toISOString().split('T')[0];
+                if (!devotionals[dateStr]) {
+                    const themeIndex = Math.floor(Math.random() * themes.length);
+                    const theme = themes[themeIndex];
+                    const scriptureIndex = Math.floor(Math.random() * theme.scriptures.length);
+                    
+                    devotionals[dateStr] = {
+                        title: theme.title,
+                        scripture: theme.scriptures[scriptureIndex],
+                        reference: theme.references[scriptureIndex],
+                        reflection: reflectionTemplates[Math.floor(Math.random() * reflectionTemplates.length)],
+                        prayer: prayerTemplates[Math.floor(Math.random() * prayerTemplates.length)]
+                    };
+                }
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+        }
+
+        // Initialize
+        generateFullYearDevotionals();
+
+        // Set initial date to today or Jan 1, 2026
+        function initializeDate() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const dateInput = document.getElementById('dateInput');
+            
+            if (year === 2026) {
+                dateInput.value = today.toISOString().split('T')[0];
+            } else {
+                dateInput.value = '2026-01-01';
+            }
+            
+            loadDevotional();
+        }
+
+        // Load devotional for selected date
+        function loadDevotional() {
+            const dateInput = document.getElementById('dateInput');
+            const selectedDate = dateInput.value;
+            const content = document.getElementById('devotionalContent');
+            
+            if (!selectedDate) {
+                content.innerHTML = '<div class="loading">Please select a date</div>';
+                return;
+            }
+
+            const devotional = devotionals[selectedDate];
+            
+            if (!devotional) {
+                content.innerHTML = '<div class="loading">No devotional found for this date</div>';
+                return;
+            }
+
+            const date = new Date(selectedDate + 'T00:00:00');
+            const dayNumber = Math.floor((date - new Date('2026-01-01T00:00:00')) / (1000 * 60 * 60 * 24)) + 1;
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            content.innerHTML = `
+                <div class="devotional-card">
+                    <div class="devotional-content">
+                        <div class="date-display">${formattedDate}</div>
+                        <div class="day-number">Day ${dayNumber} of 365</div>
+                        <h2 class="devotional-title">${devotional.title}</h2>
+                        
+                        <div class="section">
+                            <div class="section-label">Today's Scripture</div>
+                            <div class="scripture">
+                                ${devotional.scripture}
+                                <div class="scripture-reference">— ${devotional.reference}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="section">
+                            <div class="section-label">Reflection</div>
+                            <div class="reflection">
+                                <p>${devotional.reflection}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="section">
+                            <div class="section-label">Prayer</div>
+                            <div class="prayer">
+                                ${devotional.prayer}
+                            </div>
+                        </div>
+
+                        <div class="navigation">
+                            <button onclick="previousDay()" class="btn btn-secondary nav-btn">← Previous Day</button>
+                            <button onclick="nextDay()" class="btn btn-secondary nav-btn">Next Day →</button>
+                        </div>
+
+                        <div class="creator-credit">
+                            Created by Dr. Damilola Adesanya (<a href="https://instagram.com/iamdaminho" target="_blank" rel="noopener">@iamdaminho</a>) via <a href="https://claude.ai" target="_blank" rel="noopener">Claude.ai</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Save to localStorage
+            localStorage.setItem('lastDevotionalDate', selectedDate);
+        }
+
+        // Navigation functions
+        function goToToday() {
+            const today = new Date();
+            const year = today.getFullYear();
+            if (year === 2026) {
+                document.getElementById('dateInput').value = today.toISOString().split('T')[0];
+            } else {
+                document.getElementById('dateInput').value = '2026-01-01';
+            }
+            loadDevotional();
+        }
+
+        function previousDay() {
+            const dateInput = document.getElementById('dateInput');
+            const currentDate = new Date(dateInput.value + 'T00:00:00');
+            currentDate.setDate(currentDate.getDate() - 1);
+            
+            if (currentDate >= new Date('2026-01-01')) {
+                dateInput.value = currentDate.toISOString().split('T')[0];
+                loadDevotional();
+            }
+        }
+
+        function nextDay() {
+            const dateInput = document.getElementById('dateInput');
+            const currentDate = new Date(dateInput.value + 'T00:00:00');
+            currentDate.setDate(currentDate.getDate() + 1);
+            
+            if (currentDate <= new Date('2026-12-31')) {
+                dateInput.value = currentDate.toISOString().split('T')[0];
+                loadDevotional();
+            }
+        }
+
+        function randomDay() {
+            const start = new Date('2026-01-01');
+            const end = new Date('2026-12-31');
+            const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            document.getElementById('dateInput').value = randomDate.toISOString().split('T')[0];
+            loadDevotional();
+        }
+
+        // PWA Install functionality
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installPrompt').classList.add('show');
+        });
+
+        document.getElementById('installBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response: ${outcome}`);
+                deferredPrompt = null;
+                document.getElementById('installPrompt').classList.remove('show');
+            }
+        });
+
+        document.getElementById('closePrompt').addEventListener('click', () => {
+            document.getElementById('installPrompt').classList.remove('show');
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeDate();
+            
+            // Restore last viewed date if available
+            const lastDate = localStorage.getItem('lastDevotionalDate');
+            if (lastDate) {
+                document.getElementById('dateInput').value = lastDate;
+                loadDevotional();
+            }
+
+            // Register service worker
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then((registration) => console.log('Service Worker registered'))
+                    .catch((error) => console.log('Service Worker registration failed:', error));
+            }
+        });
+    </script>
+</body>
+</html>

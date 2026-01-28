@@ -1,0 +1,24 @@
+{
+  "name": "Kingdom Daily - Bible Study 2026",
+  "short_name": "Kingdom Daily",
+  "description": "365 days of in-depth Bible study with chapters, narrations, and prayer points",
+  "start_url": "/bible-study-app.html",
+  "display": "standalone",
+  "background_color": "#F5EDE1",
+  "theme_color": "#2C1810",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect fill='%232C1810' width='192' height='192'/%3E%3Ctext x='96' y='130' font-family='serif' font-size='100' text-anchor='middle' fill='%23F5EDE1'%3E📖%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect fill='%232C1810' width='512' height='512'/%3E%3Ctext x='256' y='350' font-family='serif' font-size='280' text-anchor='middle' fill='%23F5EDE1'%3E📖%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["lifestyle", "education", "books"],
+  "screenshots": []
+}
